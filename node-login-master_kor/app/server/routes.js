@@ -208,7 +208,7 @@ module.exports = function(app) {
 		}
 	})
 
-	app.post('/updata-pofol', function(req,res){
+	app.post('/update-pofol', function(req,res){
 		UP.updatePofol({
 			id: req.session.user._id,
 			myphoto: req.body['myphoto'],
@@ -220,6 +220,7 @@ module.exports = function(app) {
 			}else{
 				req.session.user = o.value;
 				res.status(200).send('ok');
+				res.redirect('/print');
 			}
 		})
 	})

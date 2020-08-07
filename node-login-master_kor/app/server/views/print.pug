@@ -7,11 +7,12 @@ block content
 			thead.thead-dark
 				tr
 					th(style='width:50px;text-align:center') #
-					th(style='width:220px') Name
-					th(style='width:220px') Username
-					th(style='width:220px') id
+					th(style='width:180px') Name
+					th(style='width:180px') Username
+					th(style='width:180px') id
 					th language
 					th %
+					th coment
 					th Account Created
 			tbody
 			- for (var i = 0; i < accts.length; i++)
@@ -22,4 +23,5 @@ block content
 					td= accts[i]._id
 					td= accts[i].comlang
 					td= accts[i].comlangExp
+					td= accts[i].mycoment
 					td= accts[i].date

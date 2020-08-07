@@ -1,3 +1,6 @@
+
+const crypto 		= require('crypto');	// 암호화 모듈
+const moment 		= require('moment');	// 날짜관련 모듈(DB에 가입일자 있는거에 사용)
 const MongoClient 	= require('mongodb').MongoClient;	// 몽고디비에 연결하기위한 아이
 
 var db, accounts;
@@ -14,19 +17,26 @@ MongoClient.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopol
 		// 연결이 모두 완료시 뜨는 창. 이때부터 서버가 오픈 된것
 	}
 });
+/*
+	레코드의 삽입 및 수정
+*/
 
-exports.updatePofol = function(newData, callback){
+// 사용자 정보 수정하는 부분.
+exports.updatePofol = function(newData, callback)
+{
+	let findOneAndUpdate = function(data){
+		var o = {
 
-    let findOneAndUpdate = function(data){
-        var o = {
-            myphoto: data.myphoto,
-            comlang: data.comlang,
-            mycoment: data.mycoment,
-        }
-    accounts.findOneAndUpdate({_id:getObjectId(data.id)}, {$set:o}, {returnOriginal : false}, callback);
-    }
-    
-    findOneAndUpdate(newData);
+			myphoto : data.myphoto,
+			comlang : data.comlang,
+			mycoment : data.mycoment
+		}
+		accounts.findOneAndUpdate({_id:getObjectId(data.id)}, {$set:o}, {returnOriginal : false}, callback);
+	}
+	findOneAndUpdate(newData);
 }
 
-
+var getObjectId = function(id)
+{
+	return new require('mongodb').ObjectID(id);
+}
