@@ -60,7 +60,7 @@ HomeController.prototype.onUpdateSuccess = function() //update 성공시 출력�
 {
 	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
 	$('.modal-alert .modal-header h4').text('Success!');
-	$('.modal-alert .modal-body p').html('Your account has been updated.');
+	$('.modal-alert .modal-body p').html('계정 업데이트 완료.');
 	$('.modal-alert').modal('show');
 	$('.modal-alert button').off('click');
 }

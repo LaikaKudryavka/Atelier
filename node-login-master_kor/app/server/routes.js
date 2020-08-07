@@ -1,6 +1,6 @@
-
 var AM = require('./modules/account-manager');
 var EM = require('./modules/email-dispatcher');
+var UP = require('./modules/update-pofol');
 
 module.exports = function(app) {
 
@@ -206,11 +206,22 @@ module.exports = function(app) {
 		}else{
 			res.render('setpofol',{title : "Setting Portfolio"});
 		}
-
 	})
 
 	app.post('/updata-pofol', function(req,res){
-		
+		UP.updatePofol({
+			id: req.session.user._id,
+			myphoto: req.body['myphoto'],
+			comlang: req.body['comlang'],
+			mycoment: req.body['mycoment'],
+		}, function(e,o){
+			if (e){
+				res.status(400).send('error-updating-set-portfolio');
+			}else{
+				req.session.user = o.value;
+				res.status(200).send('ok');
+			}
+		})
 	})
 	
 	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
