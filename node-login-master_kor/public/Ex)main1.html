@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@keyframes blink {
+    from,to {
+        border-color: transparent
+    }
+
+    50%{
+    border-color: black;
+    }
+}
+/*문자 애니메이션*/
+.typer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: balck;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    width:100%;
+}
+
+.typer-text{
+    border-right: 0.1em solid white;
+    font-size: 4vw;
+    white-space: pre;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    padding-top: 0.2em;
+    animation: blink 1s step-end infinite;/*문자 나타나는 '1s'에서 조절하시면됩니다.*/
+    
+}
+</style>
+<body>
+    <div class="typer">
+        <h1 class="typer-text"></h1>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+                var header = $('p').text().split("")/*""에 내용을 입력하면 나타나며 출력됩니다. 'split("")'은 단어 하나하나를 배열로 바꿔주는 역할입니다. header에 배열로 들어갑니다.*/
+                var typer = document.querySelector("h1");
+                for(let i = 0; i<header.length; i++){
+                    setTimeout(function(){
+                        typer.innerHTML += header[i];
+                    }, i * 80);
+                }
+            })
+    </script>
+</body>
+</html>

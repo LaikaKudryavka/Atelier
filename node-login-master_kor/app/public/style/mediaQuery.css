@@ -1,0 +1,132 @@
+@media screen and ( max-width: 768px ) {
+    html,body{
+        min-width: 300px;
+        min-height: 765px;
+    }
+    #box{
+        margin: 0;
+        padding: 0;
+     }
+     .leftDiv{
+        min-width: 300px;
+    }
+    #portrait{
+        width: 200px;
+    }
+    .rightDiv{
+        margin: 0;
+        min-width: 250px;
+        text-align: center;
+   }
+    ul{
+        padding:0px;
+    }
+
+    header{
+        z-index: 700;
+    }
+    .content > .box{
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        padding: 5px;
+    }
+    #language{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #language > img{
+        width: 140px;
+        height: 105px;
+    }
+
+    #box3{
+        background-color: rgb(91, 0, 0);
+        height: auto;
+    }
+    .footer{
+        text-align: center;
+        height: auto;
+    }
+    .comment{
+        min-width: 350px;   
+    }
+    #hello-text{
+        border-right: 0.1em solid white;
+        font-size: 5vw;
+        white-space: pre-wrap;
+    }
+}
+    /* 헤더 */
+@media screen and ( max-width: 1049px ) {
+    #menuicon{
+        display: none;
+    }
+    #menuicon + label{
+        display: block;
+        width: 40px;
+        height:20px;
+        top:calc(5% - 25px);
+        transition: all .35s;
+        cursor: pointer;
+    }
+    #menuicon:checked +label{
+        z-index: 700;
+        right: 300px;
+    }
+    #menuicon + label img{
+        position:absolute;
+        border-radius: 15px;
+        z-index: 600;
+        top: 0%;
+        left: 0%;
+        padding: 0%;
+        width: 30px;
+        height: 30px;
+        filter: invert(100%);
+    }   
+    #menuicon:checked + label img{
+        transform: rotate(180deg);
+    }
+    .siddebar{
+        position: fixed;    
+        top: -90%;
+        right: 0%;
+        opacity: 75%;
+        transition: all .35s;
+    }
+    .navbar > .midnav > .navTag{
+        display: flex; 
+        flex-direction: column;
+        float: right;
+        background: rgba(0,0,0,.6);
+        color: #fff;
+        height: 60vh;
+        width: 40vw;
+        min-height: 400px;
+        max-width: 150px;
+        min-width: 150px;
+        list-style-type: none;
+    }
+    .navbar > .midnav > .navTag li{
+        font-family: Roboto,sans-serif;
+        border: 0;
+        cursor: pointer;
+        opacity: .6;
+        font-size: 10rem;
+    }
+    .navbar > .midnav > .navTag li a{
+        color:white;
+        font-style: inherit;
+    }
+    .li-Btn{
+        font-style: inherit;
+        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 1);
+        font-size: 1.2rem;
+    }
+    #menuicon:checked + label + div{
+        top: 0%;
+    }
+}

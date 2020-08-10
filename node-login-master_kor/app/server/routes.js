@@ -208,7 +208,7 @@ module.exports = function(app) {
 		}
 	})
 
-	app.post('/update-pofol', function(req,res){
+	app.post('/updatepofol', function(req,res){
 		UP.updatePofol({
 			id: req.session.user._id,
 			myphoto: req.body['myphoto'],
@@ -216,10 +216,9 @@ module.exports = function(app) {
 			mycoment: req.body['mycoment'],
 		}, function(e,o){
 			if (e){
-				res.status(400).send('error-updating-set-portfolio');
+				console.log(e);
 			}else{
 				req.session.user = o.value;
-				res.status(200).send('ok');
 				res.redirect('/print');
 			}
 		})

@@ -1,0 +1,63 @@
+input[id="menuicon"]{
+    display: none;
+}
+input[id="menuicon"] + label{
+    display: none;
+    width: 40px;
+    height:20px;
+    top:calc(5% - 25px);
+    transition: all .35s;
+    cursor: pointer;
+}
+input[id=menuicon]:checked +label{
+    z-index: 700;
+    right: 300px;
+}
+input[id="menuicon"] + label img{
+    position:absolute;
+    border-radius: 15px;
+    transition: all .35s;
+    z-index: 600;
+    top: 0%;
+    left: 0%;
+    padding: 0%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    filter: invert(100%);
+}
+.siddebar{
+    position: fixed;    
+    left: 40vw;
+    opacity: 75%;
+}
+.navbar > .midnav > .navTag{
+    float: right;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    border-radius: 2px 2px 30px 30px;
+    list-style-type: none;
+}
+.navbar > .midnav > .navTag li{
+    font-family: Roboto,sans-serif;
+    padding: 1.7rem;
+    float: left;
+    border: 0;
+    cursor: pointer;
+    opacity: 0.6;
+    font-size: 23px;
+}
+.navbar > .midnav > .navTag li a{
+    text-decoration:none;
+    color:white;
+    font-style: inherit;
+}
+.navbar > .midnav > .navTag > li > a:hover{
+    color:red;
+    font-style: inherit;
+}
+.midnav > u{
+    margin: 0;
+    padding: 0;
+    padding-left: 0;
+}

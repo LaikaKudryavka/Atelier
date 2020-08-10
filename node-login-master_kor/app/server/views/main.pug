@@ -5,93 +5,130 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   title Document
   link(rel='stylesheet' type='text/css' href='./style/main.css')
-  // <link rel="stylesheet" type="text/css" href="./style/mainAnimation.css">
+  link(rel='stylesheet' type='text/css' href='./style/mainAnimation.css')
+  link(rel='stylesheet' type='text/css' href='./style/mediaQuery.css')
+  link(rel='stylesheet' type='text/css' href='./style/header.css')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
   script(src='./js/jquery-3.5.1.js')
-  script(src='./js/main.js' defer='')
+  script(src='./js/main/main.js' defer='')
   script(src='/js/views/home.js' defer='')
   script(src='/js/controllers/homeController.js' defer='')
   script(src='/js/form-validators/accountValidator.js' defer='')
   include modals/alert
   include modals/confirm
-  script.
-    $(document).ready(function(){
-    $(window).scroll(function () {
-    var scrollValue = $(document).scrollTop();
-    // if(scrollValue<830){
-    //     $(".html,body").css("overflow","hidden");
-    // }else{
-    //     $(".html,body").css("overflow","");
-    // };
-    if(scrollValue<300){
-    $("#arrowDown").attr("src","img/arrow-down.png");
-    $("#hos").attr("href","#footer");
-    }else{
-    $("#arrowDown").attr("src","img/arrow-up.png");
-    $("#hos").attr("href","#mibox");
+
+
+  style.
+    @import url("./style/timeLine.css");
+    .timeline {
+    height: 500px;
+    width: 100%;
+    overflow:auto;
+    overflow-x: hidden;
+    /* padding-top: 55px; */
     }
-    });
-    })
-    $(document).ready(function($){
-    $("a").click(function(event){
-    event.preventDefault();
-    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 700);
-    });
-    })
 header.header
-  input#btn-logout.btn-logout(type='button' value='로그아웃?' btn-danger='' well-lg='')
-  .navtab
+  input#menuicon(type='checkbox')
+  label(for='menuicon')
+    img(src='img/arrow-down.png')
+  .siddebar
     nav#navbar.navbar
       nav.midnav
         ul.navTag
           li
-            a#selectli0(href='#footer' onclick='setTimeout(function(){addContent(0)},1000);') &#xB5BC;
+            a.move(href='#mibox' onclick="top.location='javascript:location.reload()'") Home
           li
-            a#selectli1(href='#box1' onclick='addContent(1);') &#xAEC4;
+            a#selectli0.move(href='#box0') About
           li
-            a#selectli2(href='#box2' onclick='addContent(2);') &#xB8E9;
-#mibox.box(style='background-color: black;')
-  #helloBlind &#xC774;&#xAC83;&#xC740; &#xBD80;&#xB044;&#xB7EC;&#xC6B4; &#xC120;&#xAE38;&#xC774;
+            a#selectli1.move(href='#box1') TimeLine
+          li
+            a#selectli2.move(href='#box2') Project
+          li
+            a(href='/setpofol' btn-danger='' well-lg='') Admin
+          
+          li
+            a#btn-logout.btn-logout(type='button' value='LogOut' btn-danger='' well-lg='') LogOut
+#mibox.box
+  #helloBlind 2&#xC870; OOO&#xC758; &#xD3EC;&#xD2B8;&#xD3F4;&#xB9AC;&#xC624;&#xC785;&#xB2C8;&#xB2E4;
   #hello
     h1#hello-text
-  a#hos(href='#footer')
-    img#arrowDown(src='img/arrow-down.png')
 section#content.content
-  #box0.box(style='background-color:red;')
-    .picture
-      img(src='style/images/꺼져.jpg' alt='')
-    .introduce
+  #box0.box
+    .leftDiv
+      img#portrait(src='img/꺼져.jpg' alt='')
+    .rightDiv
       | &#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C;
       | &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;
       | &#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C;
       | &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;
       | &#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C;
       | &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;
-    br
-    .language
-      ul.language1
-        img(src='style/images/java.jpg' alt='')
-        h4 java 0%
-      ul.language2
-        img(src='style/images/javascript.jpg' alt='')
-        h4 javascript 0%
-      ul.language3
-        img(src='style/images/htmlcss.jpg' alt='')
-        h4 HTML, CSS 0%
-  #box1.box(style='background-color:orange;')
+      br
+      ul.language
+        li(data-score='100%')
+          h3 Potoshop
+        li(data-score='90%')
+          h3 Java
+        li(data-score='70%')
+          h3 JavaScript
+        li(data-score='60%')
+          h3 Css
+        li(data-score='50%')
+          h3 Html
+        //
+          이미지 일단주석처리
+          <li class="language1">
+          <img src="img/java.jpg" alt="">
+          <h4>java 0%</h4>
+          </li>
+          <li class="language2">
+          <img src="img/javascript.jpg" alt="">
+          <h4>javascript 0%</h4>
+          </li>
+          <li class="language3">
+          <img src="img/htmlcss.jpg" alt="">
+          <h4>HTML, CSS 0%</h4>
+          </li>
+  #box1.box
     p &#xD0C0;&#xC784;&#xB77C;&#xC778;
-    .container
-      .char
-        .face
-          .l-eye
-          .r-eye
-          .mouth
-        .body
-          .l-hand
-          .r-hand
-          .l-leg
-          .r-leg
-  #box2.box(style='background-color:yellow;')
+    section.timeline
+      ul
+        li
+          div
+            time(width:='' 100px;='')
+              | 2020.01.01
+              br
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;1
+        li
+          div
+            time 2020.01.02
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;2
+        li
+          div
+            time &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0A0;&#xC9DC;3
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;3 &#xAE00;&#xC790; &#xAE38;&#xC774;&#xB294; &#xD654;&#xBA74; &#xAD6C;&#xC131;&#xC0C1; 0~50&#xC790; &#xC774;&#xB0B4;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xB294;&#xAC8C; &#xC88B;&#xC744;&#xB4EF; &#xD569;&#xB2C8;&#xB2E4; 50&#xC790;
+        li
+          div
+            time &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0A0;&#xC9DC;4
+            content
+              | &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;3 &#xAE00;&#xC790; &#xAE38;&#xC774;&#xB294; &#xD654;&#xBA74; &#xAD6C;&#xC131;&#xC0C1; 3~50&#xC790; &#xC774;&#xD558;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xB294;&#xAC8C; &#xC88B;&#xC744;&#xB4EF; &#xD569;&#xB2C8;&#xB2E4; 50&#xC790;&#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;3 &#xAE00;&#xC790; &#xAE38;&#xC774;&#xB294; &#xD654;&#xBA74; &#xAD6C;&#xC131;&#xC0C1; 3~50&#xC790; &#xC774;&#xD558;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xB294;&#xAC8C; &#xC88B;&#xC744;&#xB4EF; &#xD569;&#xB2C8;&#xB2E4; 100&#xC790;
+        li
+          div
+            time &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0A0;&#xC9DC;5
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;5
+        li
+          div
+            time &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0A0;&#xC9DC;6
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;6
+        li
+          div
+            time &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0A0;&#xC9DC;7
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;7
+        li
+          div
+            time &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0A0;&#xC9DC;8
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;8
+  #box2.box
     .comment
       form#contact(action='' method='post')
         div
