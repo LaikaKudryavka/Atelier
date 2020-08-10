@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style/main.css">
+    <link rel="stylesheet" type="text/css" href="./style/mainAnimation.css">
+    <link rel="stylesheet" type="text/css" href="./style/mediaQuery.css">
+    <link rel="stylesheet" type="text/css" href="./style/header.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/main.js" defer></script>
+    <style>
+        @import url("./style/timeLine.css");
+        .timeline {
+            height: 500px;
+            width: 100%;
+            overflow:auto;
+            overflow-x: hidden;
+            /* padding-top: 55px; */
+           
+        }
+    </style>
+</head>
+<body>    
+    <header class="header">
+        <input type="checkbox" id="menuicon">
+        <label for="menuicon">
+            <img src="img/arrow-down.png">
+        </label>
+        <div class="siddebar">
+            <div class="navtab">
+                <nav class="navbar" id="navbar">
+                    <nav class="midnav">
+                        <ul class="navTag">
+                            <li><a href="#mibox"onClick="top.location='javascript:location.reload()'">Home</a></li>
+                            <li><a href="#box0" id="selectli0">About</a></li>
+                            <li><a href="#box1" id="selectli1">TimeLine</a></li>
+                            <li><a href="#box2" id="selectli2">Project</a></li>
+                            <li><a href="" btn-danger well-lg>Manager</a></li>
+                            <li><a href="" id="btn-logout" btn-danger well-lg>Logout</a></li>
+                        </ul>
+                    </nav>
+                </nav>
+            </div>
+        </div>  
+        </header>
+        <div class="box" id="mibox" >
+            <div id = "helloBlind">2조 OOO의 포트폴리오입니다</div>
+            <div id=hello>
+                <h1 id="hello-text"></h1 style="width=100vw">
+            </div>
+        </div>
+        <section class="content" id="content">
+            <div class="box" id="box0">
+                <div class="leftDiv">
+                    <img src="img/꺼져.jpg" alt="" id="portrait">
+                </div>
+                <div class="rightDiv">
+                    간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개
+                    넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라
+                    간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개
+                    넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라
+                    간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개
+                    넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라간단한 자기소개 넣고불라불라불라
+                    <br>
+                    <ul class="language">
+                            <li data-score="100%"><h3>Potoshop</h3></li>
+                            <li data-score="90%"><h3>Java</h3></li>
+                            <li data-score="70%"><h3>JavaScript</h3></li>
+                            <li data-score="60%"><h3>Css</h3></li>
+                            <li data-score="50%"><h3>Html</h3></li>
+                         <!-- 이미지 일단주석처리
+                              <li class="language1">
+                            <img src="img/java.jpg" alt="">
+                            <h4>java 0%</h4>
+                        </li>
+                        <li class="language2">
+                            <img src="img/javascript.jpg" alt="">
+                            <h4>javascript 0%</h4>
+                        </li>
+                        <li class="language3">
+                            <img src="img/htmlcss.jpg" alt="">
+                            <h4>HTML, CSS 0%</h4>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="box" id="box1">
+                <p>타임라인</p>
+                <section class="timeline">
+                    <ul>
+                        <li>
+                          <div>
+                            <time width: 100px;>2020.01.01<br></time>
+                            <content>타임라인 내용1</content> 
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>2020.01.02</time>
+                            <content>타임라인 내용2</content>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>타임라인 날짜3</time>
+                            <content>타임라인 내용3 글자 길이는 화면 구성상 0~50자 이내로 제한하는게 좋을듯 합니다 50자</content>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>타임라인 날짜4</time> 
+                            <content>타임라인 내용3 글자 길이는 화면 구성상 3~50자 이하로 제한하는게 좋을듯 합니다 50자타임라인 내용3 글자 길이는 화면 구성상 3~50자 이하로 제한하는게 좋을듯 합니다 100자</content>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>타임라인 날짜5</time>
+                            <content>타임라인 내용5</content> 
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>타임라인 날짜6</time>
+                            <content>타임라인 내용6</content>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>타임라인 날짜7</time>
+                            <content>타임라인 내용7</content>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <time>타임라인 날짜8</time>
+                            <content>타임라인 내용8</content>
+                          </div>
+                        </li>
+                        
+                      </ul>
+                  </section>
+            </div>
+            <div class="box" id="box2">
+                <div class="comment">
+                    <form id="contact" action="" method="post">
+                        <div>
+                            <h3>보노보노에게 메일보내기</h3>
+                            <h4>Tel. 000-0000-0000</h4>
+                            <h4>Email. porori@gmail.com</h4>
+                        </div>
+                        <div>
+                            <fieldset>
+                                <input placeholder="이름을 입력하세요." style="text-align: center;" type="text" tabindex="1" required autofocus>
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="이메일을 입력하세요." style="text-align: center;" type="email" tabindex="2" required>
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="전화번호를 입력하세요." style="text-align: center;" type="tel" tabindex="3" required>
+                            </fieldset>
+                            <fieldset>
+                                <textarea placeholder="메세지를 입력해주세요" style="text-align: center;" tabindex="4" required></textarea>
+                            </fieldset>
+                            <fieldset>
+                                <button name="submit" type="submit" id="contact-submit"
+                                    data-submit="...Sending">보내기</button>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="footer" id="footer">
+            <div class="footer-div">
+                <p>이 웹사이트는 김선길군을 갈아넣어 만들었읍니다.</p>
+                <p>presented by <a href="#mibox">ZAIA</a></p>
+            </div>
+        </footer>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

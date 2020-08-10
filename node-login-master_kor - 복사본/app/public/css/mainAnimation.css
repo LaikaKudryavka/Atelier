@@ -1,0 +1,92 @@
+.navbar > .sideNav > .navbarR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    right: 0;
+}
+.navbar > .sideNav > .navbarR:hover{
+    animation: show-upR 500ms ease-out ;
+    animation-fill-mode: forwards;
+}
+.navbar > .sideNav > .navbarR:not(:hover){
+    animation: show-outR 500ms ease-out ;
+    animation-fill-mode: forwards;
+}
+.navbar > .sideNav > .navbarL{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    left: 0;
+}
+.navbar > .sideNav > .navbarL:hover{
+    animation: show-upL 500ms ease-out ;
+    animation-fill-mode: forwards;
+}
+.navbar > .sideNav > .navbarL:not(:hover){
+    animation: show-outL 500ms ease-out ;
+    animation-fill-mode: forwards;
+}
+@keyframes show-upL{
+    0%{background-color: white; 
+        opacity: 1%;
+        /* transform: translateX(0px); */
+    }
+    5%{background-color: white; 
+        opacity: 1%;
+        /* transform: translateX(-1000px); */
+    }
+    
+    100%{
+        background-color: white;
+        opacity: 20%;
+        /* transform: translateX(0); */
+    };
+}
+@keyframes show-upR{
+    0%{
+        background-color: white; 
+        opacity: 1%;
+        /* transform: translateX(0px); */
+    }
+    5%{background-color: white; 
+        opacity: 1%;
+        /* transform: translateX(1000px); */
+    }
+
+    100%{
+        background-color: white;
+        opacity: 20%;
+        /* transform: translateX(0); */
+    };
+}
+@keyframes show-outR{
+    0%{
+        background-color: white; 
+        opacity: 20%;
+        /* transform: translateX(0px); */
+    }
+    100%{
+        background-color: white;
+        opacity: 1%;
+        /* transform: translateX(0); */
+    };
+}  
+@keyframes show-outL{
+    0%{
+        background-color: white; 
+        opacity: 20%;
+        /* transform: translateX(0px); */
+    }
+    100%{
+        background-color: white;
+        opacity: 1%;
+        /* transform: translateX(0); */
+    };
+}
+@keyframes appearance{
+    0%{}
+    50%{}
+    100%{}
+}

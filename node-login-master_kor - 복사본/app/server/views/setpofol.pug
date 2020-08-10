@@ -1,0 +1,28 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title &#xD3EC;&#xD2B8;&#xD3F4;&#xB9AC;&#xC624; &#xAD00;&#xB9AC; &#xD398;&#xC774;&#xC9C0;
+header
+  h3 &#xD3EC;&#xD2B8;&#xD3F4;&#xB9AC;&#xC624; &#xC6F9;&#xD398;&#xC774;&#xC9C0; &#xAD00;&#xB9AC;
+section
+  .portfolioset-form
+    form#pofolset(method='post' action='/updatepofol')
+      input#myphoto(type='file' name='myphoto' accept='image/png, image/jpeg, image/gif')
+      br
+      input(type='checkbox' name='comlang' value='java')
+      |  Java 
+      br
+      input(type='checkbox' name='comlang' value='c')
+      |  C 
+      br
+      input(type='checkbox' name='comlang' value='html')
+      |  HTML 
+      br
+      input(type='checkbox' name='comlang' value='nodejs')
+      |  NodeJS 
+      br
+      input#mycoment(type='textbox' name='mycoment' placeholder='자기소개')
+      br
+      input(type='submit')
+      input(type='reset')
