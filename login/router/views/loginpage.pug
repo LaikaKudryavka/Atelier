@@ -1,0 +1,13 @@
+doctype html
+html
+head
+    title Login Page
+
+body
+    form.loginBox(method='post' action='/login')
+        h3 USERID
+        input(type='text', id='input-UserId', name='user')
+        h3 Password
+        input(type='password', id='input-Password', name='password')
+        br
+        button(type='submit') login

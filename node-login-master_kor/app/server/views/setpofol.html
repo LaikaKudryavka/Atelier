@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오 관리 페이지</title>
+    <script>
+        function setComLangExp(computerlang){
+            let comlang = document.getElementById(computerlang);
+        }
+
+        document.addEventListener("DOMContentLoaded",function(){
+
+        })
+    </script>
 </head>
 <body>
     <header>
@@ -14,10 +23,10 @@
             <form method="post" action="/update-pofol" id="pofolset">
                 <input type="file" id="myphoto" name="myphoto" accept="image/png, image/jpeg, image/gif">
                 <br>
-                <input type="checkbox" name="comlang" value="java"> Java <br>
-                <input type="checkbox" name="comlang" value="c"> C <br>
-                <input type="checkbox" name="comlang" value="html"> HTML <br>
-                <input type="checkbox" name="comlang" value="nodejs"> NodeJS <br>
+                <input type="checkbox" id="javalang" name="comlang" value="java"> Java <br>
+                <input type="checkbox" id="clang" name="comlang" value="c"> C <br>
+                <input type="checkbox" id="htmllang" name="comlang" value="html"> HTML <br>
+                <input type="checkbox" id="nodejslang" name="comlang" value="nodejs"> NodeJS <br>
 
                 <input type="textbox" id="mycoment" name="mycoment" placeholder="자기소개"> <br>
 
