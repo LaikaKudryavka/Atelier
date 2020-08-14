@@ -11,6 +11,7 @@ const port = 3000;
 app.set('views','./router/views');
 app.set('view engine', 'pug');
 
+app.use(bodyParser());
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -24,7 +25,7 @@ app.use(session({
 app.use('/login', loginRouter)
 
 app.get('/',(req,res) => {
-    if(req.session.user == true){
+    if(req.session.user){
         res.render('home');
     }else{
         res.redirect('/login');

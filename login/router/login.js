@@ -15,11 +15,11 @@ router.get('/a',(req,res) => {
 })
 
 router.post('/',(req, res) => {
-    loginModule.checkLogin(req.body['user'], req.body['password'],() => {
-        req.session.user = req.user;
+    loginModule.checkLogin(req.body['user'], req.body['password'], (o) => {
 
-        console.log(`session.user : ${req.session.user}`);
-        console.log(`userid : ${req.user} userpass : ${req.password}`);
+        req.session.user = o;
+        console.log(`${req.session.user} / ${o}`);
+        console.log(`userid : ${req.body['user']} userpass : ${req.body['password']}`);
         console.log("login finish");
         res.redirect('../');
     });
