@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const loginRouter = require('./router/login');
+const loginRouter = require('./router/auth');
 const port = 3000;
 
 app.set('views','./router/views');
@@ -22,13 +22,13 @@ app.use(session({
     })
 }))
 
-app.use('/login', loginRouter)
+app.use('/auth', loginRouter)
 
 app.get('/',(req,res) => {
     if(req.session.user){
         res.render('home');
     }else{
-        res.redirect('/login');
+        res.redirect('/auth');
     }
 })
 

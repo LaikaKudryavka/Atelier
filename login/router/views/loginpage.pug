@@ -4,10 +4,25 @@ head
     title Login Page
 
 body
-    form.loginBox(method='post' action='/login/')
+    form.loginBox(method='post' action='/auth/login')
+        h2 Login
         h3 USERID
-        input(type='text', id='input-UserId', name='user')
+        input(type='text', id='login-UserId', name='user')
         h3 Password
-        input(type='password', id='input-Password', name='password')
+        input(type='password', id='login-Password', name='password')
         br
         button(type='submit') login
+    br
+    hr
+
+    form.signUpBox(method='post' action='/auth/signup')
+        h2 Sign Up
+        h3 USERID
+        input(type='text' id='signUp-UserId', name='user')
+        h3 Password
+        input(type='password', id='signUp-Password', name='password')
+        h3 E-Mail
+        input(type='text', id='signUp-Email', name='email')
+        br
+        button(type='submit') Submit
+        button(type='reset') Reset
