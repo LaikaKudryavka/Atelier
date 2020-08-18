@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+const expressVaildator = require('express-validator');
 const authModule = require('./module/authModule');
 
 router.use(function(req, res, next){
