@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const expressVaildator = require('express-validator');
 const authModule = require('./module/authModule');
+
+const { body, validationResult } = require('express-validator');
 
 router.use(function(req, res, next){
     next();
@@ -35,8 +36,8 @@ router.post('/logout',(req,res) => {
     res.redirect('../');
 })
 
-router.post('/signup',(req,res) => {
-    authModule.signUp(req.body['user'],req.body['password'],req.body['email'],() => {
+router.post('/signup',[body('user').isLength({min:1}), body('pass').isLength({min:5})],(req,res) => {
+    authModule.signUp(req.body.user,req.body.password,req.body.email,() => {
         res.redirect('../');
     })
 })
