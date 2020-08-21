@@ -3,6 +3,7 @@ const authModule = require('./module/authModule');
 
 const { body, validationResult } = require('express-validator');
 
+
 router.use(function(req, res, next){
     next();
 });
@@ -36,8 +37,16 @@ router.post('/logout',(req,res) => {
     res.redirect('../');
 })
 
-router.post('/signup',[body('user').isLength({min:1}), body('pass').isLength({min:5})],(req,res) => {
-    authModule.signUp(req.body.user,req.body.password,req.body.email,() => {
+router.post('/signup',[
+    body('user').isLength({min:4}).withMessage("아이디는 4자 이상 작성하시기 바랍니다."), 
+    body('password').isLength({min:5}).withMessage("비밀번호는 5자 이상 작성하기 바랍니다."),
+    body('email').isEmail().withMessage("이메일 형태가 아닙니다.")
+],(req,res) => {
+    let errors = validationResult(req);
+    if(!errors.isEmpty()){
+        return res.status(400).send({errors: errors.array()});
+    }
+    authModule.signUp(req.body.user,req.body.password,req.body.email,req.body.teleNum,() => {
         res.redirect('../');
     })
 })

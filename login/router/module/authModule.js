@@ -25,27 +25,27 @@ exports.localLogin = (user, pass, callback) => {
     });
 }
 
-exports.signUp = (user, pass, email, callback) => {
+exports.signUp = (user, pass, email,teleNum, callback) => {
     
     acc.findOne({user:user},(e,o) => {
         if(o){
-            console.log("someone using userid");
+            console.log("이미 있는 아이디 입니다.");
             return false;
         }
         acc.findOne({email:email},function(e, o) {
             if(o){
-                console.log('someone using E-Mail');
+                console.log('이미 있는 E-Mail 주소입니다.');
             } else{
-                acc.insertOne({user:user, pass:pass, email:email},{ useUnifiedTopology: true }, (e) => {
+                acc.insertOne({user:user, pass:pass, email:email, tele_num:teleNum},{ useUnifiedTopology: true }, (e) => {
                     if(e){
                         console.log(e);
                     }
+                    console.log("sign up !");
                 });
             }
         });
     });
-
-    callback();
+    callback
 }
 
 let checkValidator = (user, pass, email) => {

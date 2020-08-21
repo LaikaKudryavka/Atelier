@@ -2,10 +2,12 @@ const express = require('express');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+
 
 const app = express();
 
-const loginRouter = require('./router/auth');
+const loginRouter = require('./router/auth.js');
 const port = 3000;
 
 app.set('views','./router/views');
