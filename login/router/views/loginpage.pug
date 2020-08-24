@@ -1,30 +1,32 @@
 doctype html
-html
 head
-    title Login Page
+  title Login V19
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' type='text/css' href='/css/util.css')
+  link(rel='stylesheet' type='text/css' href='/css/main.css')
 
-body
-    form.loginBox(method='post' action='/auth/login')
-        h2 Login
-        h3 USERID
-        input(type='text', id='login-UserId', name='user')
-        h3 Password
-        input(type='password', id='login-Password', name='password')
-        br
-        button(type='submit') login
-    br
-    hr
+.limiter
+  .container-login100
+    .wrap-login100.p-l-55.p-r-55.p-t-65.p-b-50
+      form.login100-form.validate-form(method='post' action='./auth/login')
+        span.login100-form-title.p-b-33 Account Login
+        .wrap-input100.validate-input(data-validate='User is required')
+          input.input100(type='text' name='user' placeholder='User')
+          span.focus-input100-1
+          span.focus-input100-2
+        .wrap-input100.rs1.validate-input(data-validate='Password is required')
+          input.input100(type='password' name='password' placeholder='Password')
+          span.focus-input100-1
+          span.focus-input100-2
+        .container-login100-form-btn.m-t-20
+          button.login100-form-btn Sign in
+        .text-center.p-t-45.p-b-4
+          span.txt1 Forgot
+          a.txt2.hov1(href='#') Username / Password?
+        .text-center
+          span.txt1 Create an account?
+          a.txt2.hov1(href='#') Sign up
 
-    form.signUpBox(method='post' action='/auth/signup')
-        h2 Sign Up
-        h3 USERID
-        input(type='text' id='signUp-UserId', name='user')
-        h3 Password
-        input(type='password', id='signUp-Password', name='password')
-        h3 E-Mail
-        input(type='text', id='signUp-Email', name='email')
-        h3 TelePhone Number
-        input(type='text', id='signUp-tele_num', name='teleNum')
-        br
-        button(type='submit') Submit
-        button(type='reset') Reset
+script(src='js/jquery-3.2.1.min.js')
+script(src='js/main.js')

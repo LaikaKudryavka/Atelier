@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const path = require('path');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
@@ -11,7 +12,7 @@ const loginRouter = require('./router/auth.js');
 const port = 3000;
 
 app.set('views','./router/views');
-app.set('view engine', 'pug');
+app.set('view engine', 'html');
 
 app.use(bodyParser());
 app.use(session({

@@ -11,8 +11,10 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
+    "html": "^1.0.0",
     "mongodb": "^3.6.0",
     "mongoose": "^5.9.28",
+    "path": "^0.12.7",
     "pug": "^3.0.0"
   },
   "devDependencies": {
