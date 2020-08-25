@@ -1,0 +1,247 @@
+
+p{  
+    margin : 0;
+}
+.header{    
+    width: 20vw;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 500;
+    position: fixed;
+    overflow: hidden;
+}   
+.content > .box{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height:100%; 
+    position:relative; 
+    color:rgb(192, 192, 192);
+    font-size:10pt; 
+    width: 100%;
+    justify-content: center;
+   
+}
+#mibox{
+    overflow: hidden;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: balck;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    width:100vw;
+    background: linear-gradient(to bottom, rgba(149,149,149,1) 0%,rgba(78,78,78,1) 11%,rgba(13,13,13,1) 35%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 65%,rgba(78,78,78,1) 89%,rgba(78,78,78,1) 100%);
+    margin: 0;
+    padding:0;
+}
+.box > section{
+    margin: 0;
+    
+}
+
+#box0{
+    transition: all .35s;
+    background-color: whitesmoke;
+    
+}
+#box1{
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    padding-top: 100px; 
+}
+
+#box2{
+    padding-top: 110px; /*위에 애니메이션 텍스트 안보이게 하려고 수정함8.10 sim*/
+    transition: all .35s;
+    background-color: whitesmoke;
+}
+/* 위아래버튼 */
+#arrowDown{
+    margin: 0%;
+    padding: 0%;
+    position: absolute;
+    top: 95%;
+    left: 47%;
+    margin-top:-30px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    filter: invert(100%);
+}
+/* 메인화면 */
+#hello-text{
+    border-right: 0.1em solid white;
+    font-size: 4vw;
+    white-space: pre;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    padding-top: 0.2em;
+    animation: blink 1s step-end infinite;
+}
+#helloBlind{
+    display: none;
+}
+/* 스크롤바 */
+::-webkit-scrollbar {
+    display: none;
+  } 
+  a{
+      text-decoration: none;
+  }
+section{
+    text-align: center;
+}
+/* 자기소개화면 */
+.content{
+    justify-content: center;
+    margin: auto;
+    position: relative; 
+    width:100%; 
+    font-family: 'Josefin Sans', sans-serif;
+}
+.leftDiv{
+    width: 50%;
+    float: left;
+    margin-top : 10%;
+    }
+#portrait{
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+}
+.rightDiv{
+    width: 50%;
+    color: rgb(94, 94, 94);
+    margin-right: 30px;
+    margin-top: 10%;
+    display: inline-block;
+    max-width: 1000px;
+}
+.language{
+    height: 300px;
+    border-top: 2px solid rgb(131, 131, 131);
+    /* margin-right: 30px;
+    margin-bottom: 20px; */
+    padding: 0.5em 0;
+    position: sticky;
+    top: 0;
+    align-items: center;          
+    
+    /*이미지 css 
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    list-style-type: none; */
+}
+.language li{
+    background: rgb(113,131,201);
+    background: linear-gradient(90deg, rgba(113,131,201,1) 0%, rgba(100,11,162,1) 100%);
+    color: #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+    list-style: none;
+}
+.language li::before{
+    content: attr(data-score);
+    float: right;
+}
+.language li[data-score="100%"]{width: 100%;}
+.language li[data-score="90%"]{width: 90%;}
+.language li[data-score="70%"]{width: 70%;}
+.language li[data-score="60%"]{width: 60%;}
+.language li[data-score="50%"]{width: 50%;}
+
+
+
+/* comment 화면 */
+.comment {
+    
+    max-width: 600px;
+    position: relative;
+    align-items: center;
+    
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#contact {
+    align-items: center;
+    align-content: center;
+    background:#c4c4c4;
+    padding: 25px;
+    margin: 50px;
+   
+}
+
+#contact h3 {
+    color: rgb(83, 83, 83);
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+}
+#contact h4{
+    color: dodgerblue;
+}
+
+        
+fieldset {
+    border: medium none ;
+    margin: 0 0 10px;
+    padding: 0;
+    width: 100%;
+    /* justify-content: center; */
+    
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact textarea {
+    width:90%;
+    border:1px solid #CCC;
+    background:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+}
+
+#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact textarea:hover {
+    transition:border-color 0.3s ease-in-out;
+    border:1px solid #AAA;
+}
+
+#contact textarea {
+    height:100px;
+    max-width:100%;
+    resize:none;
+}
+
+#contact button[type="submit"] {
+    cursor:pointer;
+    width:100%;
+    border:none;
+    background:#0CF;
+    color:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+    font-size:15px;
+}
+
+#contact button[type="submit"]:hover {
+    background:#09C;
+    transition:background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#contact input:focus, #contact textarea:focus {
+    outline:0;
+    border:1px solid #999;
+}
+/* comment 화면 끝 */
+.content > .box > div img {
+    width: 50%;
+    height: auto;
+    border-radius: 10%; 
+}

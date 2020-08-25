@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
-const path = require('path');
 const MongoStore = require('connect-mongo')(session);
+const path = require('path');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 
@@ -11,10 +11,13 @@ const app = express();
 const loginRouter = require('./router/auth.js');
 const port = 3000;
 
-app.set('views','./router/views');
-app.set('view engine', 'html');
+app.set('views', __dirname + '/router/views');
+app.set('view engine', 'pug');
 
 app.use(bodyParser());
+app.use(express.static(__dirname + '/router/views'));
+
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -29,7 +32,7 @@ app.use('/auth', loginRouter)
 
 app.get('/',(req,res) => {
     if(req.session.user){
-        res.render('home');
+        res.render('./GilTest/index');
     }else{
         res.redirect('/auth');
     }
