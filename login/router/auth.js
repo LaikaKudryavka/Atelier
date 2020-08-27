@@ -5,15 +5,15 @@ const { body, validationResult } = require('express-validator');
 
 
 router.use(function(req, res, next){
-    next();
+    if(!req.session.user){
+        next();
+    }else{
+        res.redirect('../');
+    }
 });
 
 router.get("/",(req, res) => {
     res.render('./loginpage');
-})
-
-router.get('/a',(req,res) => {
-    res.send("a");
 })
 
 router.post('/login',(req, res) => {

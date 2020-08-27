@@ -7,9 +7,12 @@ const expressValidator = require('express-validator');
 
 
 const app = express();
-
 const loginRouter = require('./router/auth.js');
+const contentRouter = require('./router/content.js');
+
 const port = 3000;
+
+//======================================================
 
 app.set('views', __dirname + '/router/views');
 app.set('view engine', 'pug');
@@ -29,10 +32,11 @@ app.use(session({
 }))
 
 app.use('/auth', loginRouter)
+app.use('/content', contentRouter)
 
 app.get('/',(req,res) => {
     if(req.session.user){
-        res.render('./GilTest/index');
+        res.redirect('/content');
     }else{
         res.redirect('/auth');
     }

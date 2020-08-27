@@ -6,16 +6,19 @@ head
   meta(name='description' content='')
   meta(name='author' content='')
   title Static Navigation - SB Admin
-  link(href='css/styles.css' rel='stylesheet')
+  link(href='../css/styles.css' rel='stylesheet')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js' crossorigin='anonymous')
-  script(src='./js/base.js' defer='')
-  link(rel='stylesheet' href='./style/p1.css')
-  link(rel='stylesheet' type='text/css' href='./style/p1-media.css')
-  script(src='./js/base.js' defer='')
-  link(rel='stylesheet' href='./style/hi.css')
-  link(rel='stylesheet' type='text/css' href='./style/hi-media.css')
+  style.
+    @import url("../style/timeLine.css");
+    .timeline {
+    height: 685px; /* footer 창이 가려지면 이 높이를 줄이면 해결할 수 있습니다*/
+    overflow:auto;
+    overflow-x: hidden;
+    }
+  style.
+    .selected{text-decoration:line-through;font-weight:700;color:red}
 nav.sb-topnav.navbar.navbar-expand.navbar-dark.bg-dark
-  a.navbar-brand(href='index.html') &#xC2E4;&#xD5D8; &#xBA54;&#xC778; &#xD398;&#xC774;&#xC9C0;
+  a.navbar-brand(href='index') &#xC2E4;&#xD5D8; &#xBA54;&#xC778; &#xD398;&#xC774;&#xC9C0;
   button#sidebarToggle.btn.btn-link.btn-sm.order-1.order-lg-0(href='#')
     i.fas.fa-bars
   // Navbar Search
@@ -53,8 +56,8 @@ nav.sb-topnav.navbar.navbar-expand.navbar-dark.bg-dark
               i.fas.fa-angle-down
           #collapseLayouts.collapse(aria-labelledby='headingOne' data-parent='#sidenavAccordion')
             nav.sb-sidenav-menu-nested.nav
-              a.nav-link(href='p1.html') &#xAC00;&#xBCBC;&#xC6B4; &#xC790;&#xAE30; &#xC18C;&#xAC1C;
-              a.nav-link(href='timeline.html') &#xD0C0;&#xC784;&#xB77C;&#xC778;
+              a.nav-link(href='p1') &#xAC00;&#xBCBC;&#xC6B4; &#xC790;&#xAE30; &#xC18C;&#xAC1C;
+              a.nav-link(href='timeline') &#xD0C0;&#xC784;&#xB77C;&#xC778;
           a.nav-link.collapsed(href='#' data-toggle='collapse' data-target='#collapsePages' aria-expanded='false' aria-controls='collapsePages')
             .sb-nav-link-icon
               i.fas.fa-book-open
@@ -95,51 +98,46 @@ nav.sb-topnav.navbar.navbar-expand.navbar-dark.bg-dark
         |                         Start Bootstrap
   #layoutSidenav_content
     // 여기에 넣으면 됨
-    section#content.content
-      #box0.box
-        .leftDiv
-          #left-title.left-title
-            img(src='./img/자기소개 쪽.png')
-            h2 INTRODUCE
-          #left-img
-            img#portrait(src='img/avatar.png' alt='')
-          #left-text
-            | &#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C;
-            | &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xAC04;&#xB2E8;&#xD55C; &#xC790;&#xAE30;&#xC18C;&#xAC1C; &#xB123;&#xACE0;&#xBD88;&#xB77C;&#xBD88;&#xB77C;&#xBD88;&#xB77C;
-        .rightDiv
-          #right-title.right-title2
-            img(src='./img/프로젝트.png' alt='')
-            h2 TAKE CHARGE OF
-          #right-li
-            ul
-              li a
-              li b
-              li c
-              li d
-              li e
-          #right-title.right-title
-            img(src='./img/설정.png')
-            h2 MY&apos;S SOCIAL
-          #social.social
-            ul.language
-              li(data-score='100%')
-                h3 Potoshop
-              li(data-score='90%')
-                h3 Java
-              li(data-score='70%')
-                h3 JavaScript
-              li(data-score='60%')
-                h3 Css
-              li(data-score='50%')
-                h3 Html
-      footer.py-4.bg-light.mt-auto
-        .container-fluid
-          .d-flex.align-items-center.justify-content-between.small
-            .text-muted Copyright &copy; Your Website 2020
-            div
-              a(href='#') Privacy Policy
-              |                                 &middot;
-              a(href='#') Terms &amp; Conditions
+    section.timeline(style='background-color: whitesmoke;')
+      ul#timelineContentUl(style='color: rgb(44, 44, 44);')
+        li#career
+          div
+            time
+              | 2020.01.01
+              td
+              br
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;1 &#xACBD;&#xB825;
+        li#certificate
+          div
+            time
+              | 2020.01.02
+              td
+              br
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;2 &#xC790;&#xACA9;
+        li#career
+          div
+            time
+              | 2020.01.03
+              td
+              br
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;3 &#xACBD;&#xB825;
+        li#certificate
+          div
+            time
+              | 2020.01.04
+              td
+              br
+            content &#xD0C0;&#xC784;&#xB77C;&#xC778; &#xB0B4;&#xC6A9;4 &#xC790;&#xACA9;
+    footer.py-4.bg-light.mt-auto
+      .container-fluid
+        .d-flex.align-items-center.justify-content-between.small
+          .text-muted Copyright &copy; Your Website 2020
+          div
+            a(href='#') Privacy Policy
+            |                                 &middot;
+            a(href='#') Terms &amp; Conditions
+            
 script(src='https://code.jquery.com/jquery-3.5.1.min.js' crossorigin='anonymous')
 script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js' crossorigin='anonymous')
-script(src='js/scripts.js')
+script(src='../js/scripts.js')
+script(src='../js/timeLineJS.js')

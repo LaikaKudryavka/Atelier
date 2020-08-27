@@ -11,7 +11,7 @@ MongoClient.connect('mongodb://localhost:27017/portfolio-web', (error, database)
         db = database.db('portfolio-web');
         acc = db.collection('account');
 
-        console.log(`MongoDB connect Succeces.`);
+        console.log(`MongoDB connect Succeces. authModule`);
     }
 })
 
