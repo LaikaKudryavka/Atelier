@@ -1,0 +1,32 @@
+<script language="javascript">
+    function addItem() {
+          var lo_table = document.getElementById("TblAttach");
+          var row_index = lo_table.rows.length;      // 테이블(TR) row 개수
+          newTr = lo_table.insertRow(row_index);
+          newTr.idName = "newTr" + row_index;
+     
+          newTd=newTr.insertCell(0);
+          newTd.innerHTML= "첨부파일#"+row_index;
+     
+          newTd=newTr.insertCell(1);
+          newTd.align = "center";
+          newTd.innerHTML= "<input type=text name=subject align=absmiddle >";
+    }
+    function delItem(){
+          var lo_table = document.getElementById("TblAttach");
+          var row_index = lo_table.rows.length-1;      // 테이블(TR) row 개수
+     
+          if(row_index > 0) lo_table.deleteRow(row_index);    
+    }
+    </script>
+    <div id="layer1">
+          <table border=0 cellpadding=0 cellspacing=0 id="TblAttach">
+          <tr>
+                <td width="100">   첨부파일#  </td>
+                <td width="100" align=center>   
+                      <input type=button value="추가" onclick="addItem();">  
+                      <input type=button value="삭제" onclick="delItem();">  
+                </td>
+          </tr>
+          </table>
+    </div> 
