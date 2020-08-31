@@ -37,6 +37,10 @@ router.post('/logout',(req,res) => {
     res.redirect('../');
 })
 
+router.get('/signup',(req,res) => {
+    res.render('./signup')
+})
+
 router.post('/signup',[
     body('user').isLength({min:4}).withMessage("아이디는 4자 이상 작성하시기 바랍니다."), 
     body('password').isLength({min:5}).withMessage("비밀번호는 5자 이상 작성하기 바랍니다."),
@@ -48,7 +52,7 @@ router.post('/signup',[
     }
     authModule.signUp(req.body.user,req.body.password,req.body.email,req.body.teleNum,() => {
         res.redirect('../');
-    })
+    });
 })
 
 module.exports = router;
