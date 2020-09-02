@@ -1,0 +1,49 @@
+@media all and ( max-width: 1400px ) {
+#titleView{
+  background-color: rgba(255, 255, 255, 0.877);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  /* padding: 0; */
+  cursor: default;
+  width: 100%;
+  min-height: calc(93.5vh - 58px);
+  background-color: whitesmoke;
+}
+@keyframes blink {
+    from,to {
+        border-color: transparent
+    }
+  
+    50%{
+    border-color: black;
+    }
+  }
+  #hello-text{
+    border-right: 0.1em solid black;
+    font-size: 4vw;
+    white-space: pre;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    padding-top: 0.2em;
+    animation: blink 1s step-end infinite;
+  }
+  #helloBlind{
+    display: none;
+  }
+  .p1-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 10vh;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: gray;  
+  }
+  .p1-title h1{
+      font-size: 3em;
+  }
+}
