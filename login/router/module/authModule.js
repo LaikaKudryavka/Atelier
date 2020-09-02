@@ -1,19 +1,31 @@
 const mongoose = require('mongoose');
+
 const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://admin:admin@cluster0.3utaa.mongodb.net/portfolio-web?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
-let acc, db;
+let acc;
 
-MongoClient.connect('mongodb://localhost:27017/portfolio-web', (error, database) => {
-    if(error){
-        console.log(`MongoDB connect Error : ${error}`);
-    }
-    else{
-        db = database.db('portfolio-web');
-        acc = db.collection('account');
+client.connect(err => {
+  acc = client.db("portfolio-web").collection("account");
+  // perform actions on the collection object
+  //client.close();
+});
 
-        console.log(`MongoDB connect Succeces. authModule`);
-    }
-})
+
+//let acc, db;
+
+// MongoClient.connect('mongodb://localhost:27017/portfolio-web', (error, database) => {
+//     if(error){
+//         console.log(`MongoDB connect Error : ${error}`);
+//     }
+//     else{
+//         db = database.db('portfolio-web');
+//         acc = db.collection('account');
+
+//         console.log(`MongoDB connect Succeces. authModule`);
+//     }
+// })
 
 exports.localLogin = (user, pass, callback) => {
     acc.findOne({user:user}, function(e, o){
@@ -25,7 +37,7 @@ exports.localLogin = (user, pass, callback) => {
     });
 }
 
-exports.signUp = (user, pass, email,teleNum, callback) => {
+exports.signUp = (user, pass, email, teleNum, callback) => {
     
     acc.findOne({user:user},(e,o) => {
         if(o){
@@ -45,16 +57,5 @@ exports.signUp = (user, pass, email,teleNum, callback) => {
             }
         });
     });
-    callback
-}
-
-let checkValidator = (user, pass, email) => {
-    
-    console.log('pass validator');
-
-    
-};
-
-function checkDupleUser(user){
-    
+    callback;
 }

@@ -1,14 +1,13 @@
 const express = require('express');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const path = require('path');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
-
 
 const app = express();
 const loginRouter = require('./router/auth.js');
 const contentRouter = require('./router/content.js');
+const { render } = require('pug');
 
 const port = 3000;
 
@@ -20,13 +19,12 @@ app.set('view engine', 'pug');
 app.use(bodyParser());
 app.use(express.static(__dirname + '/router/views'));
 
-
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
     store: new MongoStore({
-        url: "mongodb://localhost:27017/portfolio-web",
+        url: "mongodb+srv://admin:admin@cluster0.3utaa.mongodb.net/portfoli-web?retryWrites=true&w=majority",
         collection: "sessions"
     })
 }))
@@ -36,6 +34,7 @@ app.use('/content', contentRouter)
 
 app.get('/',(req,res) => {
     if(req.session.user){
+        //res.render('home');
         res.redirect('/content');
     }else{
         res.redirect('/auth');

@@ -19,7 +19,7 @@ html
     section.container
       section.login-form
         .panel.panel-default
-          form(method='post', action='/auth/signup', role='login')
+          form(method='post', action='/auth/signup')
             .panel-body
               h2 Sign up
               .input-group.form-group
@@ -28,21 +28,16 @@ html
                 input.form-control(type='text', name='user', placeholder='Username', required='')
               .input-group.form-group
                 span.input-group-addon
-                  i.glyphicon.glyphicon-envelope
-                input.form-control(type='text', name='email', placeholder='Your Email', required='')
-
-              .input-group.form-group
-                span.input-group-addon
                   i.glyphicon.glyphicon-lock
                 input.form-control(type='password', name='password', placeholder='Password', required='')
               .input-group.form-group
                 span.input-group-addon
+                  i.glyphicon.glyphicon-envelope
+                input.form-control(type='text', name='email', placeholder='Your Email', required='')
+              .input-group.form-group
+                span.input-group-addon
                   i.glyphicon.glyphicon-lock
-                input.form-control(type='password', name='repassword', placeholder='Re-enter Password', required='')
-              input(type='checkbox', name='remember', value='1')
-              |  I agree to 
-              a(href='#') terms
-              |  and 
-              a(href='#') privacy
+                input.form-control(type='text', name='teleNum', placeholder='Phone Number', required='')
+              
             .panel-footer
-              button.btn.btn-lg.btn-block.btn-primary(type='submit', name='go') Sign up
+              button.btn.btn-lg.btn-block.btn-primary(type='submit') Sign up

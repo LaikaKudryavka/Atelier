@@ -27,7 +27,7 @@ router.get('/index',(req, res) => {
 })
 
 router.get('/p1',(req, res) => {
-    authModule.p1(req.session.user, (e, charge) =>{
+    authModule.p1(req.session.user, (e, charge) => {
         res.render('./portfolioweb/p1', {char:charge});
     })
 })
@@ -37,7 +37,7 @@ router.get('/timeline',(req, res) => {
 })
 
 router.post('/update',(req, res) => {
-    authModule.update(req.session.user, req.body.charge1, req.body.charge2, req.body.charge3, req.body.charge4,);
+    authModule.update(req.session.user, req.body.charge1);
 })
 
 module.exports = router;

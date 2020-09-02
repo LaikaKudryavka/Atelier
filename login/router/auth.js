@@ -29,16 +29,18 @@ router.post('/login',(req, res) => {
     });
 })
 
-router.post('/logout',(req,res) => {
-    req.session.destroy(function(e){ 
-        req.session;
-    });
-    console.log("logout!");
-    res.redirect('../');
+router.get('/logout',(req,res) => {
+    res.send('Get Logout sibal roma');
 })
 
+router.post('/logout',(req,res) => {
+    req.session.destroy(function(){ 
+        req.session;
+    });
+});
+
 router.get('/signup',(req,res) => {
-    res.render('./signup')
+    res.render('/signup');
 })
 
 router.post('/signup',[
@@ -51,7 +53,7 @@ router.post('/signup',[
         return res.status(400).send({errors: errors.array()});
     }
     authModule.signUp(req.body.user,req.body.password,req.body.email,req.body.teleNum,() => {
-        res.redirect('../');
+        res.redirect('/login');
     });
 })
 
