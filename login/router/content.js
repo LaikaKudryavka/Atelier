@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const authModule = require('./module/pofolModule');
+const pofolModule = require('./module/pofolModule');
 
 
 router.use(function(req, res, next){
@@ -9,6 +9,8 @@ router.use(function(req, res, next){
         res.redirect('../');
     }
 });
+
+//======== 페이지 링크 ===========
 
 router.get("/",(req, res) => {
     res.redirect('/content/index');
@@ -23,21 +25,59 @@ router.get('/ha',(req, res) => {
 })
 
 router.get('/index',(req, res) => {
-    res.render('./portfolioweb/index');
+    pofolModule.index(req.session.user, (profile) => {
+        res.render('./portfolioweb/index',{profile:profile});
+    })
 })
 
 router.get('/p1',(req, res) => {
-    authModule.p1(req.session.user, (e, charge) => {
-        res.render('./portfolioweb/p1', {char:charge});
+    pofolModule.p1(req.session.user, (profiles, skills) => {
+        res.render('./portfolioweb/p1', {profiles:profiles, skills:skills});
     })
 })
 
 router.get('/timeline',(req, res) => {
-    res.render('./portfolioweb/timeline');
+    pofolModule.timeline(req.session.user, (timeline) => {
+        res.render('./portfolioweb/timeline',{timelinecontent:timeline});
+    });
 })
 
-router.post('/update',(req, res) => {
-    authModule.update(req.session.user, req.body.charge1);
+//=========================업데이트==================================
+
+router.post('/updateHello',(req, res) => {
+    pofolModule.updateHello(req.session.user, req.body.hello_text);
+    res.redirect('/');
+})
+
+router.post('/updateIntro',(req, res) => {
+    pofolModule.updateIntro(req.session.user, req.body.introduce);
+    console.log('introUpdate');
+    res.redirect('/');
+})
+
+router.post('/updateSkill',(req, res) => {
+    pofolModule.updateSkill(req.session.user, req.body.skill, req.body.skill_exp);
+    res.redirect('/');
+})
+
+router.post('/updateTimeline', (req, res) => {
+    pofolModule.updateTimeline(req.session.user, req.body.date, req.body.category, req.body.content);
+    res.redirect('/');
+})
+
+// =========== 페이지 내부 기능 ===============
+
+router.get('/selectCert', (req, res) => {
+    pofolModule.selectCertificate(req.session.user,(timeline)=>{
+        res.render('../timeline',{timelinecontent:timeline});
+    });
+})
+
+router.get('/logout',(req, res) => {
+    req.session.destroy(function(){
+        req.session;
+    });
+    res.redirect('/');
 })
 
 module.exports = router;

@@ -21,10 +21,11 @@ app.use(express.static(__dirname + '/router/views'));
 
 app.use(session({
     secret: 'keyboard cat',
-    resave: false,
+    proxy: true,
+	resave: true,
     saveUninitialized: true,
     store: new MongoStore({
-        url: "mongodb+srv://admin:admin@cluster0.3utaa.mongodb.net/portfoli-web?retryWrites=true&w=majority",
+        url: "mongodb+srv://admin:admin@cluster0.3utaa.mongodb.net/portfolio-web?retryWrites=true&w=majority",
         collection: "sessions"
     })
 }))

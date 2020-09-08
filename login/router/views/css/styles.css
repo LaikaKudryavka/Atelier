@@ -4013,6 +4013,9 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  position: fixed;
+  right: 01%;
+  
 }
 .navbar-nav .nav-link {
   padding-right: 0;

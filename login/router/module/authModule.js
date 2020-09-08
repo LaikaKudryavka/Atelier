@@ -57,5 +57,5 @@ exports.signUp = (user, pass, email, teleNum, callback) => {
             }
         });
     });
-    callback;
+    callback();
 }
