@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.project.app.account">
+		
+	<insert id="addAccount" parameterType="AccountVO">
+		INSERT INTO ACCOUNT(USER_ID, PASSWORD, NICKNAME, EMAIL, REG_DATE, ENABLE)
+		VALUES(
+		    #{userId},
+		    #{password},
+		    #{nickName},
+		    #{email},
+		    NOW(),
+		    1
+		)
+	</insert>
+</mapper>
